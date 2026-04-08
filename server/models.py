@@ -9,12 +9,11 @@ db = SQLAlchemy(metadata=metadata)
 
 # define a model class by inheriting from db.Model.
 
-
 class Pet(db.Model):
     __tablename__ = 'pets'
 
-    id = db.Column(db.Integer)
-    name = db.Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
     species = db.Column(db.String)
 
     def __repr__(self):
